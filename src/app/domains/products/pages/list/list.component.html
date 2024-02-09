@@ -1,11 +1,13 @@
 <div class="container">
-    <h2>List page</h2>
-    <p>products</p>
-    <div class="grid grid-cols-3">
-        <app-product />
-        <app-product />
-        <app-product />
-        <app-product />
-        <app-product />
+    <div class="grid grid-cols-3 gap-6">
+        <app-product [title]="'Producto 1'" 
+                     [price]="12" 
+                     [img]="'https://picsum.photos/250/250?r=2'"
+                     (addToCart)="fromChild($event)"   
+                     />
+        <app-product (addToCart)="fromChild($event)" [title]="'Producto 2'" [price]="10" [img]="'https://picsum.photos/250/250?r=24'"/>
+        <app-product (addToCart)="fromChild($event)" [title]="'Producto 3'" [price]="20" [img]="'https://picsum.photos/250/250?r=1'"/>
+        <app-product (addToCart)="fromChild($event)" [title]="'Producto 4'" [price]="30" [img]="'https://picsum.photos/250/250?r=3'"/>
+        <app-product (addToCart)="fromChild($event)" [title]="'Producto 5'" [price]="15" [img]="'https://picsum.photos/250/250?r=5'"/>
     </div>
 </div>
