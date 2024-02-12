@@ -1,11 +1,9 @@
-<p>
-    <input 
-    class="w-20 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    type="number" [value]="duration()" (change)="changeDuration($event)">
-</p>
-<p>
-    <input type="text" [value]="msg()" (change)="changeMessage($event)">
-</p>
-<p>
-    <app-counter [duration]="duration()" [message]="msg()"/>
-</p>
+<div>
+    <h1 class="text-lg font-bold">About</h1>
+    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, a, sequi ipsum porro nisi
+        magnam quis odit, pariatur voluptate magni id tempore ab dolores quidem. Quasi architecto ut distinctio beatae.
+    </p>
+    <p class="text-sm">
+        Numero de clientes: <app-counter [duration]="duration()" [message]="msg()" />
+    </p>
+</div>
