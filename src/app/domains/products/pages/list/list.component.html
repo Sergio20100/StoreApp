@@ -1,15 +1,15 @@
 <div class="flex space-x-4 mt-2">
-    <div class="w-80">
+    <div class="w-80 text-md">
         <ul>
-            <li>
+            <li class="list-item font-bold hover:bg-slate-800 hover:text-white">
                 <a routerLink="/">All</a>
             </li>
-            <li *ngFor="let category of categories()">
+            <li *ngFor="let category of categories()" class="list-item  hover:bg-slate-800 hover:text-white " [class.text-blue-300]="category_name===category">
                 <a [routerLink]="'/'" [queryParams]="{category_name: category}">{{ category }}</a>
             </li>
         </ul>
     </div>
-    <div class="w-full grid grid-cols-4 gap-8 ">
+    <div class="w-full grid grid-cols-4 gap-8 items-end">
         <app-product 
             *ngFor="let product of products(); index as i" 
             [product]="product"
@@ -17,3 +17,4 @@
             (addToCart)="addToCart($event)" />
     </div>
 </div>
+
