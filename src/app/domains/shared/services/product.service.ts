@@ -17,4 +17,12 @@ export class ProductService {
   getOneProduct(id:string){
     return this.http.get<Product>(`https://fakestoreapi.com/products/${id}`)
   }
+
+  getByCategory(category_name:string){
+    if(category_name!==undefined){
+      return this.http.get<Product[]>(`https://fakestoreapi.com/products/category/${category_name}`)
+    }else{
+      return this.http.get<Product[]>('https://fakestoreapi.com/products')
+    }
+  }
 }
